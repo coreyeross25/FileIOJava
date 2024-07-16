@@ -14,9 +14,9 @@ public class ReadThree
             // Create the file to write to
             PrintWriter fileOut = new PrintWriter("/Users/coreye/Projects/FileIOJava/Step3/output.txt");
             // Write text just like we would to the console
-            fileOut.println("Hello ");
+            fileOut.print("Coreye");
             // Close out file/Very important to close out the file!!!!!!!
-            fileOut.close();  
+            fileOut.close();
 
             System.out.println("Done!");
             

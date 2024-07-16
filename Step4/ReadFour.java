@@ -8,26 +8,22 @@ import java.io.IOException;
 public class ReadFour {
     public static void main(String[] args) {
         try {
-            System.out.print("Writing to file ... ");
-            // Create the file to write to
-            PrintWriter fileOut = new PrintWriter("output.txt");
-            // Write text just like we would to the console
-            fileOut.println("Hello ");
-            // Clode out file
-            fileOut.close();
+            Scanner fileIn = new Scanner(new File("/Users/coreye/Projects/FileIOJava/Step4/input.txt"));
 
-            System.out.println("Done!");
-
-            // Read in file to verify it
-            Scanner fileIn = new Scanner(new File("output.txt"));
-
-            System.out.println("Reading from file ... ");
-            while (fileIn.hasNext()) {
+            while (fileIn.hasNext())
+            {
+                // Reads the entire line as a string
                 String lineIn = fileIn.nextLine();
-                System.out.println(lineIn);
+                // Split the line into a String array
+                String[] input = lineIn.split(",");
+                int sum = 0;
+                for (int i = 0; i < input.length; i ++) {
+                    sum += Integer.parseInt(input[i]);
+                }
+                System.out.printf("Running total = %d \n", sum);
             }
-            System.out.println("Done!");
-        } catch (IOException e) {
+        }
+        catch (IOException e) {
             System.out.println("File not found");
         }
     }
